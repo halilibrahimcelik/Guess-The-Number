@@ -6,6 +6,7 @@ const lowerNumber = document.querySelector(".lowerNumber");
 const higherNumber = document.querySelector(".higherNumber");
 const chanceNumber = document.querySelector("strong");
 
+const figureParts = document.querySelectorAll(".figure-part");
 localNumber = 35;
 let enteredNumber = 20;
 let count = 5;
@@ -13,13 +14,24 @@ console.log(localNumber);
 
 //!validating input
 function validator() {
+  let chances = 6;
   if (inputArea.value === "") {
     alert("Please enter a valid number");
     return;
   }
 
   if (localNumber > inputArea.value) {
+    chances--;
     lowerNumber.innerText = inputArea.value;
+    figureParts.forEach((part, index) => {
+      console.log(chances);
+      if (index > chances) {
+        part.style.display = "block";
+        // console.log(index);
+      } else {
+        part.style.display = "none";
+      }
+    });
     alert("If want to save me, enter a bigger number");
   } else if (inputArea.value > localNumber) {
     higherNumber.innerText = inputArea.value;

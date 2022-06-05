@@ -10,10 +10,13 @@ body{
     outline: none;
 }
 .container{
-    height: 100vh;
     display: flex;
+    flex-direction: column;
+    height: 100vh;
+
     align-items: center;
-    justify-content: center;
+    row-gap: 1rem;
+ 
 }
 .wrapper{
     text-align: center;
@@ -33,3 +36,15 @@ button:focus
     -webkit-appearance:none;
     box-shadow: none !important;
 } 
+
+.figure-container{
+    fill:transparent;
+    stroke: rgb(242, 239, 239);
+    stroke-width: 6px;
+    stroke-linecap: round;
+
+}
+
+.figure-part{
+    display:none;
+}
