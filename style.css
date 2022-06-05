@@ -1,14 +1,21 @@
 body {
   background-image: url("../img/Colored-Patterns.svg");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100vh;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   row-gap: 1rem;
 }
 
@@ -16,10 +23,12 @@ body {
   text-align: center;
   padding: auto 0px;
 }
+
 .wrapper .header {
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7) !important;
-  color: rgb(181, 176, 176) !important;
+  color: #b5b0b0 !important;
 }
+
 .wrapper h5 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -31,12 +40,13 @@ input:focus,
 button:focus {
   outline: 0px !important;
   -webkit-appearance: none;
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .figure-container {
   fill: transparent;
-  stroke: rgb(44, 41, 41);
+  stroke: #2c2929;
   stroke-width: 6px;
   stroke-linecap: round;
 }
@@ -53,14 +63,19 @@ button:focus {
   left: 0;
   right: 0;
   display: none;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .popUp {
   background-color: #2980b9;
   border-radius: 6px;
-  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.3);
   padding: 10px;
   text-align: center;
 }
@@ -75,5 +90,4 @@ button:focus {
   border-radius: 5px;
   font-size: 1rem;
 }
-
 /*# sourceMappingURL=style.css.map */
