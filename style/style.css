@@ -4,6 +4,10 @@ body {
   background-repeat: no-repeat;
 }
 
+*:focus {
+  outline: none;
+}
+
 .container {
   height: 100vh;
   display: -webkit-box;
@@ -20,5 +24,13 @@ body {
 .wrapper {
   text-align: center;
   padding: auto 0px;
+}
+
+input:focus,
+button:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 /*# sourceMappingURL=style.css.map */

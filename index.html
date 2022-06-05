@@ -27,14 +27,18 @@
         <h5 class="mt-5">Enter the correct number and win!</h5>
         <h5 class="pb-3">
           (between <span class="lowerNumber">0</span> and
-          <span class="HigherNumber">100</span> )
+          <span class="higherNumber">100</span> )
         </h5>
         <form class="row justify-content-center">
           <div class="col-12">
             <input
+              id="target"
               type="number"
-              class="form-control border-0"
+              class="form-control border-0 border inputArea"
               placeholder="Enter a number"
+              autofocus
+              min="0"
+              max="100"
             />
           </div>
           <div class="col-12 pt-2">
@@ -45,6 +49,8 @@
         </form>
       </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
       integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"

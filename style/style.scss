@@ -6,6 +6,9 @@ body{
 
 }
 
+*:focus{
+    outline: none;
+}
 .container{
     height: 100vh;
     display: flex;
@@ -20,3 +23,13 @@ body{
 
 
 }
+
+
+
+input:focus,
+button:focus
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+} 
