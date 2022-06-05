@@ -23,11 +23,11 @@
   <body>
     <section class="container pt-5">
       <div class="wrapper">
-        <h2 class="text-danger">GUESS THE NUMBER</h2>
+        <h2 class="text-danger header">GUESS THE NUMBER and Save ME!</h2>
         <h5 class="mt-5">Enter the correct number and win!</h5>
         <h5 class="pb-3">
           (between <span class="lowerNumber">0</span> and
-          <span class="higherNumber">100</span> )
+          <span class="higherNumber">50</span> )
         </h5>
         <form class="row justify-content-center">
           <div class="col-12">
@@ -38,19 +38,17 @@
               placeholder="Enter a number"
               autofocus
               min="0"
-              max="100"
+              max="50"
             />
           </div>
           <div class="col-12 pt-2">
             <button class="btn btn-warning text-white" type="click">
               Guess!
             </button>
-            <button class="btn btn-success text-white" type="submit">
-              Reset
-            </button>
+            <button class="btn btn-success text-white">Reset</button>
           </div>
           <h2 class="text-warning">
-            You have left <strong class="text-danger h1">5</strong> chances
+            You have left <strong class="text-danger h1">6</strong> chances
           </h2>
         </form>
       </div>
@@ -72,6 +70,12 @@
         <line x1="140" y1="150" x2="160" y2="180" class="figure-part" />
       </svg>
     </section>
+    <div class="pop-up-container" id="popUp-container">
+      <div class="popUp">
+        <h2 id="final-Message"></h2>
+        <button id="play-again" type="submit">Play Again</button>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script

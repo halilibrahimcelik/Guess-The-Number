@@ -1,4 +1,4 @@
-let localNumber = Math.floor(Math.random() * 100);
+let localNumber = Math.floor(Math.random() * 50);
 
 const btn = document.querySelector("button");
 const inputArea = document.querySelector(".inputArea");
@@ -7,49 +7,56 @@ const higherNumber = document.querySelector(".higherNumber");
 const chanceNumber = document.querySelector("strong");
 
 const figureParts = document.querySelectorAll(".figure-part");
-localNumber = 35;
+const popUp = document.getElementById("popUp-container");
+const playAgainBtn = document.getElementById("play-again");
+const finalMessage = document.getElementById("final-Message");
+// localNumber = 35;
 let enteredNumber = 20;
-let count = 5;
+let count = 6;
 console.log(localNumber);
 
 //!validating input
 function validator() {
-  let chances = 6;
   if (inputArea.value === "") {
     alert("Please enter a valid number");
     return;
   }
-
-  if (localNumber > inputArea.value) {
-    chances--;
-    lowerNumber.innerText = inputArea.value;
-    figureParts.forEach((part, index) => {
-      console.log(chances);
-      if (index > chances) {
-        part.style.display = "block";
-        // console.log(index);
-      } else {
-        part.style.display = "none";
-      }
-    });
-    alert("If want to save me, enter a bigger number");
-  } else if (inputArea.value > localNumber) {
-    higherNumber.innerText = inputArea.value;
-    alert("If want to save me enter, a smaller number");
-  } else if (+inputArea.value === localNumber) {
-    alert("Thank you Mario!");
-  }
-
   resetCount();
   if (count < 0) return null;
   chanceNumber.innerText = count;
+  console.log(count);
+  figureParts.forEach((part, index) => {
+    if (index < count) {
+      part.style.display = "none";
+      console.log(index);
+    } else {
+      part.style.display = "block";
+    }
+  });
+
+  if (localNumber > inputArea.value) {
+    lowerNumber.innerText = inputArea.value;
+    if (count === 0) return;
+
+    alert("If you want to save me, enter a bigger number");
+  } else if (+inputArea.value > localNumber) {
+    higherNumber.innerText = inputArea.value;
+    if (count === 0) return;
+    alert("If  you want to save me enter, a smaller number");
+  } else if (+inputArea.value === localNumber) {
+    figureParts.forEach((part) => (part.style.display = "none"));
+    finalMessage.innerText = "Congratulations! You won! 😃";
+    popUp.style.display = "flex";
+    return;
+  }
 }
 
 //!reset the count
 function resetCount() {
   count--;
   if (count === 0) {
-    alert("You have failed to save me!");
+    finalMessage.innerText = "I thought you would save me😔";
+    popUp.style.display = "flex";
     return;
   }
 }
@@ -63,8 +70,8 @@ inputArea.addEventListener("change", () => {
     inputArea.value = 1;
   }
   if (v > 100) {
-    alert("Max number is 100");
-    inputArea.value = 100;
+    alert("Max number is 50");
+    inputArea.value = 50;
   }
 });
 
@@ -74,4 +81,9 @@ btn.addEventListener("click", (e) => {
   validator();
   $("#target").focus();
   inputArea.value = "";
+});
+
+playAgainBtn.addEventListener("click", () => {
+  popUp.style.display = "none";
+  window.location.reload();
 });
